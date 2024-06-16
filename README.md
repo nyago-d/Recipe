@@ -1,36 +1,26 @@
-# Welcome to Remix!
+# レシピ管理
 
-- 📖 [Remix docs](https://remix.run/docs)
+## 説明
 
-## Development
+レシピを管理するためのアプリケーションです。
 
-Run the dev server:
+https://shironeko.hateblo.jp/entry/2024/06/16/155905
 
-```shellscript
-npm run dev
-```
+## 構成
 
-## Deployment
+- Remix
+- Prisma
+- Storybook
 
-First, build your app for production:
+## セットアップ
 
-```sh
-npm run build
-```
+- `npm install` を実行してください。
+- `.env` ファイルを作成し、`.env.sapmle`を基に環境変数を設定してください。
+- データベースを作成後に、`npx prisma migrate dev` を実行してください。
 
-Then run the app in production mode:
+※既存のDBに対してマイグレートは行わないように十分に注意してください。
 
-```sh
-npm start
-```
+## 実行
 
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+- `npm run dev` でアプリケーションが実行できます。
+- `npm run storybook` で Storybook が起動します。
