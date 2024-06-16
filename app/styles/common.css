@@ -1,0 +1,73 @@
+body {
+  font-family: 'Segoe UI',Arial,Meiryo,sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #555;
+  letter-spacing: 0.1rem;
+  overflow-y: scroll
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1680px;
+  min-width: 1024px;
+  /* position: relative; */
+}
+
+.sidebar {
+  width: 20%;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: #d9d9d981;
+  min-height: 100vh;
+  /* position: fixed; */
+}
+
+.search {
+  margin: 30px 20px;
+}
+
+.search input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 0;
+}
+
+.menu-item {
+  border-bottom: 1px solid #bbb;
+  cursor: pointer;
+}
+
+.menu-item a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: #555;
+}
+
+.menu-item:first-child {
+  border-top: 1px solid #bbb;
+}
+
+.menu-item a.active {
+  font-weight: bold;
+}
+
+.add-menu {
+  padding: 20px;
+  color: gray;
+  cursor: pointer;
+}
+
+.main-content {
+  width: 80%;
+  padding: 20px;
+  max-width: 1200px;
+}
+

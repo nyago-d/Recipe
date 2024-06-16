@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Menu {
+  menuId          Int               @id @default(autoincrement())
+  name            String            @db.VarChar(64)
+  imageUrl        String?           @db.VarChar(64)
+  ingredientGroups MenuIngredientGroup[]
+  links       MenuLink[]
+  steps       MenuStep[]
+  tags        MenuTag[]
+  @@map("menu")
+}
+
+model MenuIngredientGroup {
+  menuId                Int
+  groupId               Int
+  groupName             String?                  @db.VarChar(64)
+  menu                  Menu                    @relation(fields: [menuId], references: [menuId], onDelete: Cascade, onUpdate: NoAction, map: "menu_ingredient_group_ibfk_1")
+  ingredients   MenuIngredient[]
+
+  @@id([menuId, groupId])
+  @@map("menu_ingredient_group")
+}
+
+model MenuIngredient {
+  menuId          Int
+  groupId         Int
+  seqNo           Int
+  name            String          @db.VarChar(64)
+  amount          String          @db.VarChar(64)
+  ingredientGroup MenuIngredientGroup           @relation(fields: [menuId, groupId], references: [menuId, groupId], onDelete: Cascade, onUpdate: NoAction, map: "menu_ingredient_ibfk_1")
+
+  @@id([menuId, groupId, seqNo])
+  @@map("menu_ingredient")
+}
+
+model MenuLink {
+  menuId Int
+  url    String @db.VarChar(512)
+  title  String @db.VarChar(64)
+  menu   Menu   @relation(fields: [menuId], references: [menuId], onDelete: Cascade, onUpdate: NoAction, map: "menu_link_ibfk_1")
+
+  @@id([menuId, url])
+  @@map("menu_link")
+}
+
+model MenuStep {
+  menuId Int
+  seqNo  Int
+  text   String @db.VarChar(256)
+  menu   Menu   @relation(fields: [menuId], references: [menuId], onDelete: Cascade, onUpdate: NoAction, map: "menu_step_ibfk_1")
+
+  @@id([menuId, seqNo])
+  @@map("menu_step")
+}
+
+model MenuTag {
+  menuId Int
+  tag    String @db.VarChar(64)
+  menu   Menu   @relation(fields: [menuId], references: [menuId], onDelete: Cascade, onUpdate: NoAction, map: "menu_tag_ibfk_1")
+
+  @@id([menuId, tag])
+  @@map("menu_tag")
+}

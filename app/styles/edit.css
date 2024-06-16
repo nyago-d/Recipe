@@ -1,0 +1,128 @@
+input {
+    color: #555;
+}
+.main-content h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+}
+.main-content h2 {
+    font-size: 1rem;
+    margin: 0;
+}
+.form-group {
+    display: flex;
+    padding-bottom: 2rem;
+}
+.title-area {
+    width: 20%;
+    padding-right: 20px;
+}
+.title-area button, .ingredient-block button {
+    margin-top: 1rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
+}
+.ingredient-block button {
+    margin-left: 20px;
+}
+.input-area {
+    width: calc(80% - 20px);
+}
+.full > input {
+    width: calc(100% - 10px);
+}
+.ingredient-block {
+    margin-bottom: 1rem;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.ingredient-block > div {
+    margin-top: 0.6rem;
+    width: 100%;
+    display: flex;
+}
+.ingredient-block > span {
+    font-size: 0.9rem;
+    color: #555;
+}
+.ingredient-block > div span {
+    display: block;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+.ingredient {
+    width: 60%;
+}
+.quantity {
+    margin-left: 14px;
+    width: 34%;
+}
+input {
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.step {
+    width: calc(100% - 10px);
+    margin-bottom: 16px;
+}
+.tag {
+    display: block;
+    margin-bottom: 16px;
+}
+.link-title {
+    width: 30%;
+}
+.link-url {
+    margin-left: 14px;
+    width: calc(70% - 40px);
+}
+.link-header {
+    display: flex;
+    margin-bottom: 1rem;
+}
+.link-header span {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+.link-block {
+    margin-bottom: 16px;
+}
+.button-update {
+    margin-top: 1rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #6151eb;
+    color: #fff;
+    cursor: pointer;
+}
+.button-delete {
+    margin-left: 14px;
+    margin-top: 1rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #eb5151;
+    color: #fff;
+    cursor: pointer;
+}
+.button-cancel {
+    margin-left: 14px;
+    margin-top: 1rem;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #555;
+    cursor: pointer;
+}
